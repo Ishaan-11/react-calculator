@@ -1,10 +1,10 @@
 import React from "react";
 import "./Display.css";
 
-function Display() {
+function Display(props) {
   return (
     <div className="component-display">
-      <div>display</div>
+      <div>{props.value}</div>
     </div>
   );
 }

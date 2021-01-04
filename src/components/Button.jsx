@@ -4,9 +4,13 @@ import "./Button.css";
 function Button(props) {
   const classes = `component-button ${props.orange ? "orange" : ""} ${props.wide ? "wide" : ""}`;
 
+  function handleClick() {
+    props.clickHandle(props.name);
+  }
+
   return (
     <div className={classes}>
-      <button>{props.name}</button>
+      <button onClick={handleClick}>{props.name}</button>
     </div>
   );
 }

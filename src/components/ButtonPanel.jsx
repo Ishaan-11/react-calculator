@@ -2,37 +2,42 @@ import React from "react";
 import Button from "./Button";
 import "./ButtonPanel.css";
 
-function ButtonPanel () {
+function ButtonPanel(props) {
+
+  function handleClick(buttonName) {
+    props.clickHandle(buttonName);
+  }
+
   return (
     <div className="component-button-panel">
       <div>
-        <Button name="AC"/>
-        <Button name="+/-"/>
-        <Button name="%"/>
-        <Button name="÷" orange />
+        <Button name="AC" clickHandle={handleClick} />
+        <Button name="+/-" clickHandle={handleClick} />
+        <Button name="%" clickHandle={handleClick} />
+        <Button name="÷" clickHandle={handleClick} orange />
       </div>
       <div>
-        <Button name="7"/>
-        <Button name="8"/>
-        <Button name="9"/>
-        <Button name="x" orange />
+        <Button name="7" clickHandle={handleClick} />
+        <Button name="8" clickHandle={handleClick} />
+        <Button name="9" clickHandle={handleClick} />
+        <Button name="x" clickHandle={handleClick} orange />
       </div>
       <div>
-        <Button name="4"/>
-        <Button name="5"/>
-        <Button name="6"/>
-        <Button name="-" orange />
+        <Button name="4" clickHandle={handleClick} />
+        <Button name="5" clickHandle={handleClick} />
+        <Button name="6" clickHandle={handleClick} />
+        <Button name="-" clickHandle={handleClick} orange />
       </div>
       <div>
-        <Button name="1"/>
-        <Button name="2"/>
-        <Button name="3"/>
-        <Button name="+" orange />
+        <Button name="1" clickHandle={handleClick} />
+        <Button name="2" clickHandle={handleClick} />
+        <Button name="3" clickHandle={handleClick} />
+        <Button name="+" clickHandle={handleClick} orange />
       </div>
       <div>
-        <Button name="0" wide />
-        <Button name="."/>
-        <Button name="=" orange />
+        <Button name="0" clickHandle={handleClick} wide />
+        <Button name="." clickHandle={handleClick}/>
+        <Button name="=" clickHandle={handleClick} orange />
       </div>
     </div>
   );
